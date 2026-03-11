@@ -10,7 +10,7 @@ const MESSAGE_FETCH_LIMIT = parseInt(process.env.MESSAGE_FETCH_LIMIT || "200", 1
 
 const FB_DATABASE_URL = (process.env.FIREBASE_DATABASE_URL || "").replace(/\/$/, "");
 const FB_DB_SECRET    = process.env.FIREBASE_DB_SECRET || "";
-const FB_DATA_PATH    = "da-ops-hub-data";
+const FB_DATA_PATH    = "discordAnalytics";
 
 // ─── Discord Client ────────────────────────────────────────────────────────
 const client = new Client({
@@ -166,7 +166,7 @@ async function collectAnalytics() {
     };
 
     // ── Push to Firebase ────────────────────────────────────────────────────
-    const base = `${FB_DATA_PATH}/discordAnalytics`;
+    const base = FB_DATA_PATH;
 
     await fbPut(`${base}/guildInfo`,      guildInfo);
     await fbPut(`${base}/roles`,          roles);
