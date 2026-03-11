@@ -1,3 +1,3 @@
-// Wrapper replaced to call src/commands/register.js
-require('dotenv').config();
-require('./src/commands/register');
+// No slash commands to register.
+// This bot is a silent analytics collector with no user-facing interactions.
+console.log("No commands to register — this bot operates silently.");
